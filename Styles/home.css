@@ -5,6 +5,9 @@ body {
     padding: 0;
     background-color: #121212;
     color: #e0e0e0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -31,8 +34,8 @@ header h1 {
 .image-container img {
     width: 100%;
     height: auto;
-    border-radius: 12px; /* Optional: Rounded corners */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Optional: Add shadow to image */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Main Content Styles */
@@ -56,6 +59,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
+    gap: 20px; /* Adds space between the boxes */
 }
 
 .box {
@@ -103,7 +107,7 @@ footer p {
     font-size: 14px;
 }
 
-/* Ensure footer stays at the bottom */
+/* Make footer always stay at the bottom */
 body {
     min-height: 100vh;
     display: flex;
@@ -112,4 +116,55 @@ body {
 
 main {
     flex: 1;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 28px;
+    }
+
+    /* Adjust the image container */
+    .image-container {
+        padding: 15px 0;
+    }
+
+    /* Adjust main content padding */
+    main {
+        padding: 20px;
+    }
+
+    /* Stack the boxes vertically on smaller screens */
+    .boxes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box {
+        width: 80%; /* Make boxes take up more space on mobile */
+        margin-bottom: 20px; /* Add some space between boxes */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    header h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .box h3 {
+        font-size: 20px;
+    }
+
+    .box p {
+        font-size: 14px;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
 }
